@@ -35,7 +35,9 @@ pub enum Characters {
     Num(Numbers),
     NumberedBalls(NumberedBalls),
     NumberedCubes(NumberedCubes),
+    OpenSource(OpenSource),
     Plants(Plant),
+    ProgrammingLanguages(ProgrammingLanguages),
     Smile(Smile),
     Shapes(Shape),
 }
@@ -61,7 +63,9 @@ impl Characters {
             Self::Num(_) => CharWidth::Single.width(),
             Self::NumberedBalls(_) => CharWidth::Double.width(),
             Self::NumberedCubes(_) => CharWidth::Double.width(),
+            Self::OpenSource(_) => CharWidth::Double.width(),
             Self::Plants(_) => CharWidth::Double.width(),
+            Self::ProgrammingLanguages(_) => CharWidth::Double.width(),
             Self::Smile(_) => CharWidth::Double.width(),
             Self::Shapes(_) => CharWidth::Double.width(),
         }
@@ -87,7 +91,9 @@ impl Characters {
             Self::Num(c) => c.as_vec_u32(),
             Self::NumberedBalls(c) => c.as_vec_u32(),
             Self::NumberedCubes(c) => c.as_vec_u32(),
+            Self::OpenSource(c) => c.as_vec_u32(),
             Self::Plants(c) => c.as_vec_u32(),
+            Self::ProgrammingLanguages(c) => c.as_vec_u32(),
             Self::Smile(c) => c.as_vec_u32(),
             Self::Shapes(c) => c.as_vec_u32(),
         }
@@ -202,9 +208,21 @@ impl From<ezemoji::NumberedCubes> for Characters {
     }
 }
 
+impl From<ezemoji::OpenSource> for Characters {
+    fn from(e: ezemoji::OpenSource) -> Self {
+        Self::OpenSource(e)
+    }
+}
+
 impl From<ezemoji::Plant> for Characters {
     fn from(e: ezemoji::Plant) -> Self {
         Self::Plants(e)
+    }
+}
+
+impl From<ezemoji::ProgrammingLanguages> for Characters {
+    fn from(e: ezemoji::ProgrammingLanguages) -> Self {
+        Self::ProgrammingLanguages(e)
     }
 }
 

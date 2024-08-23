@@ -80,7 +80,9 @@ OPTIONS:
     num            - Good ol fashion Numbers
     numbered-balls - These are like pool balls
     numbered-cubes - These are like the pool balls but just cubes
+    open-source    - FOSS logos
     plants         - Plants of sorts
+    prog-langs     - Programming languages logos
     smile          - 😃
     shapes         - Squares and Circles of a few colors
 ",
@@ -140,7 +142,9 @@ OPTIONS:
         "num" => Numbers.into(),
         "numbered-balls" => NumberedBalls.into(),
         "numbered-cubes" => NumberedCubes.into(),
+        "open-source" => OpenSource.into(),
         "plants" => Plant.into(),
+        "prog-langs" => ProgrammingLanguages.into(),
         "smile" => Smile.into(),
         "shapes" => Shape.into(),
         _ => Bin.into(),
